@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Calculator Project</title>
+  <style>
+    body {
+      background-color: black;
+      color: limegreen;
+      font-family: monospace;
+      padding: 2rem;
+    }
+    #output {
+      white-space: pre-line;
+      margin-top: 2rem;
+    }
+    button {
+      font-size: 1rem;
+      background: white;
+      color: black;
+      border: none;
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Click <button onclick="runCalculator()">Run</button> to run the final project you will build.</h1>
+  <div id="output"></div>
+
+  <script>
+    function runCalculator() {
+      const output = document.getElementById('output');
+      output.innerText = '';
+      const lines = [
+        'Welcome to the Calculator!',
+        '----------------------------',
+        'First number: 8',
+        'Operation: +',
+        'Second number: 5',
+        'Result: 13',
+        '',
+        'View code: https://github.com/JordanGrieve/python-mini-projects/tree/main/calculator'
+      ];
+
+      let i = 0;
+      const interval = setInterval(() => {
+        if (i < lines.length) {
+          output.innerText += lines[i] + '\n';
+          i++;
+        } else {
+          clearInterval(interval);
+        }
+      }, 600);
+    }
+  </script>
+</body>
+</html>
